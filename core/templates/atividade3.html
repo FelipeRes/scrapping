@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="container">
+		<div class="row valign-wrapper">
+			<div class="col m6 l6">
+			<h3>Teresina</h3>
+			<h4>Temperatura: {{temperatura}}</h4>
+			<p>Sensacao: {{sensacao}}<br>
+			   Umidade: {{umidade}}<br>
+			   Pressao: {{pressao}}<br>
+			   Vento: {{vento}}<br>
+			   Atualizacao:{{atualizacao}}</p>
+			</div>
+			<div class="col m6 l6">
+			<p>Estes são os dados climáticos da cidade de Teresina no Piauí coletados a cada atualização da página. Eles são obtidos no site <a href="http://www.climatempo.com.br">climatempo.com.br.</a></p>
+			<p>Os dados referentes ao clima podem ser encontrados no seguinte <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/264/teresina-pi">link</a>. Este sistema salva os ultimos dados do clima em um banco de dados próprio, verificado a cada hora se houve alteração do clima.</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col s12">
+				<h4>Ultimas atualizações:</h4>
+				<table class="striped">
+					<tr>
+						<td>Horario</td>
+						<td>Atualizacao</td>
+						<td>Temperatura</td>
+						<td>Umidade</td>
+						<td>Pressao</td>
+						<td>Vento</td>
+					</tr>
+					{% for c in atualizacoes %}
+					<tr>
+						<td>{{c.horario}}</td>
+						<td>{{c.atualizacao}}</td>
+						<td>{{c.temperatura}}</td>
+						<td>{{c.umidade}}</td>
+						<td>{{c.pressao}}</td>
+						<td>{{c.vento}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

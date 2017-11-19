@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="container">
+		<h4>Valor total estimado na Copa do mundo de 2014</h4>
+		<a href="{% url 'atividade5_csv' %}">Download CSV</a>
+		<table class="striped">
+			<tr>
+				<td><b>Sede</b></td>
+				<td><b>Gasto em reais</b></td>
+			</tr>
+			{% for key, value in dicionario.items %}
+			<tr>
+				<td>{{key}}</td>
+				<td><p>{% for v in value %}
+					{% if forloop.last %}
+						<b>Somatório: R$ {{v}}<br></b>
+					{% else %}
+						R$ {{v}}<br>
+					{% endif %}
+				{% endfor %}</p></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

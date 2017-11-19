@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="center">
+    <h4>Exemplos de coleta de dados:</h4>
+    </div>
+    <div class="row center valign-wrapper">
+      <div class="col s1">
+        <p></p>
+      </div>
+      <div class="col s2">
+        <a href="{% url 'atividade1' %}">
+      	<h4>Hotten Tomatoes</h4>
+      	<img width="150" src="{% static 'img/logo-rotten-tomatoes.png' %}">
+        <p>Classificação de filmes e séries</p>
+        </a>
+      </div>
+      <div class="col s2">
+        <a href="{% url 'atividade2' %}">
+        <h4>IMDB</h4>
+        <img width="150" src="{% static 'img/logo-imdb.jpg' %}">
+        <p>Bilheteria dos filmes ao longo da semana</p>
+        </a>
+      </div>
+      <div class="col s2">
+        <a href="{% url 'atividade3' %}">
+        <h4>Clima Tempo</h4>
+        <img width="150" src="{% static 'img/logo-clima-tempo.jpg' %}">
+        <p>Previsão do tempo em Teresina</p>
+        </a>
+      </div>
+      <div class="col s2">
+        <a href="{% url 'atividade4' %}">
+        <h4>Webscraping</h4>
+        <img width="150" src="{% static 'img/web-scraping.png' %}">
+        <p>Densidade populacional de todos os paises do mundo</p>
+        </a>
+      </div>
+      <div class="col s2">
+        <a href="{% url 'atividade5' %}">
+      	<h4>Receita Federal</h4>
+      	<img width="150" src="{% static 'img/logo-receita-federal.png' %}">
+        <p>Valor total estimado na Copa do mundo de 2014</p>
+        </a>
+      </div>
+	  <div class="col s1">
+        <p></p>
+      </div>
+    </div>
+{% endblock %}

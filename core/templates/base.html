@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scraping</title>
+	<link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<nav>
+	  <div class="nav-wrapper blue">
+		  <a href="#" class="brand-logo center">Scraping de dados</a>
+	  </div>
+    </nav>
+  {% block content %}
+  {% endblock %}
+  <footer class="page-footer light blue">
+      <div class="container">
+        <div class="row">
+        	<p>Atividade da matéria Tópicos Avançados em Sistemas de Informação<br>
+        	Instituto Federal do Piauí<br>
+        	Felipe Resende Gomes © 2017 </p>
+        </div>
+      </div>
+  </footer>
+</body>
+</html>

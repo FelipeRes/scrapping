@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="container">
+		<h4 class="center">Dados de avaliação da série de Hotten Tomatoes</h4>
+		<table class="striped">
+			<thead>
+	          <tr>
+	              <td><b>Nome</b></td>
+	              <td><b>Avaliacao</b></td>
+	          </tr>
+	        </thead>
+			{% for v in lista %}
+			<tr>
+	    		<td>{{v.nome}}</td>
+	    		<td>{{v.avaliacao}}</td>
+	    	</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

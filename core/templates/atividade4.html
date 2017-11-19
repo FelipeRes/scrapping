@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<h4>Densidade populacional dos paises do mundo</h4>
+			<table class="striped">
+				<tr>
+					<td>País</td>
+					<td>Densidade</td>
+				</tr>
+				{% for pais in all_data %}
+				<tr>
+					<td>{{pais.name}}</td>
+					<td>{{pais.densidade}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock %}

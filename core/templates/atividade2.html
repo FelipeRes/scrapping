@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+	<div class="container">
+		<h4 class="center">Dados da da bilheteria de filmes do IMDB</h4>
+		<a href="{% url 'atividade2_csv' %}">Download CSV</a>
+		<table class="striped">
+			<thead>
+	          <tr>
+	              <td><b>Nome</b></td>
+	              <td><b>Rating</b></td>
+	              <td><b>Gross</b></td>
+	              <td><b>Weeks</b></td>
+	          </tr>
+	        </thead>
+			{% for v in lista %}
+			<tr>
+	    		<td>{{v.nome}}</td>
+	    		<td>{{v.rating}}</td>
+	    		<td>{{v.gross_value}}</td>
+	    		<td>{{v.weeks}}</td>
+	    	</tr>
+			{% endfor %}
+		</table>
+		<h4>Dados em csv</h4>
+		<button onclick="myFunction()">Copy text</button>
+		<textarea rows="4" cols="50" id="myInput">{{csv}}</textarea>
+	</div>
+	
+{% endblock %}
